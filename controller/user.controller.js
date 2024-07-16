@@ -23,13 +23,13 @@ const registerUser = asyncErrorHandler(async (req, res) => {
      }
      const avatarPath = req.files.avatar[0].path;
 
-     let converImagePath;
-     if (req.files && Array.isArray(req.files.coverImage) && req.files.coverImage.length) {
-          converImagePath = req.files.coverImage[0].path;
-     }
-     const avatar = await uploadOnCloudinary(avatarPath)
+     // let converImagePath;
+     // if (req.files && Array.isArray(req.files.coverImage) && req.files.coverImage.length) {
+     //      converImagePath = req.files.coverImage[0].path;
+     // }
+     // const avatar = await uploadOnCloudinary(avatarPath)
 
-     const coverImage = await uploadOnCloudinary(converImagePath)
+     // const coverImage = await uploadOnCloudinary(converImagePath)
 
      if (!avatar) {
           throw new ApiErrorClass(400, "Profile image is Mandatory")
