@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
-import { DB_NAME } from "../constant.js";
+import { DB_NAME,PRODUCT_DB } from "../constant.js";
 
 async function connectDB() {
      try {
           const connectionInstance = await mongoose.connect(
-               `${process.env.MONGO_URI}/${DB_NAME}`
+               `${process.env.MONGO_URI}/${PRODUCT_DB}`
           );
           // console.log(connectionInstance?.connections[0].readyState, "connectionInstance")
           console.log(
